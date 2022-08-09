@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "description": "vue demo",
   "main": "index.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{css,less}": [
+    "*.{json,css,less}": [
       "prettier --write"
     ]
   },
@@ -38,8 +33,10 @@
     "vite": "^3.0.4"
   },
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "lint-staged": "lint-staged --quiet"
   },
   "repository": {
     "type": "git",

@@ -1,12 +1,9 @@
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <el-header>Header{{ store.count }}</el-header>
     <el-container>
       <el-aside>
-        <el-menu
-          default-active="/home"
-          :router="true"
-        >
+        <el-menu default-active="/home" :router="true">
           <el-menu-item index="/home">
             <el-icon>
               <icon-menu />
@@ -29,13 +26,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
+import store from "@/store/home";
 
 export default defineComponent({
-
-})
+  data() {
+    return {
+      store,
+    };
+  },
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

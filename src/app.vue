@@ -5,16 +5,14 @@
 </template>
 
 <script>
-
-import { defineComponent } from 'vue'
-export default defineComponent({
-
-})
-
+import { defineComponent } from "vue";
+export default defineComponent({});
 </script>
 
 <style scoped>
-  .root {
-    display: flex;
-  }
+.root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 </style>

@@ -1,14 +1,18 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 // import AutoImport from 'unplugin-auto-import/vite'
 // import Components from 'unplugin-vue-components/vite'
 // import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import vuePlugin from '@vitejs/plugin-vue'
+import vuePlugin from "@vitejs/plugin-vue";
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@': '/src'
-    }
+      "@": "/src",
+    },
+  },
+  server: {
+    open: true,
+    port: 8080,
   },
   plugins: [
     vuePlugin(),
@@ -18,5 +22,5 @@ export default defineConfig({
     // Components({
     //   resolvers: [ElementPlusResolver()],
     // }),
-  ]
-})
+  ],
+});
