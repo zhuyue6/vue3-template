@@ -1,23 +1,8 @@
 <template>
   <el-container>
-    <el-header>Header{{ store.count }}</el-header>
+    <el-header>Header</el-header>
     <el-container>
-      <el-aside>
-        <el-menu default-active="/home" :router="true">
-          <el-menu-item index="/home">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
-            <span>Navigator One</span>
-          </el-menu-item>
-          <el-menu-item index="/home/about">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
-            <span>Navigator Two</span>
-          </el-menu-item>
-        </el-menu>
-      </el-aside>
+      <Navigator />
       <el-main>
         <router-view />
       </el-main>
@@ -25,17 +10,6 @@
   </el-container>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import store from "@/store/home";
-
-export default defineComponent({
-  data() {
-    return {
-      store,
-    };
-  },
-});
+<script setup lang="ts">
+import Navigator from "./navigator.vue";
 </script>
-
-<style scoped></style>

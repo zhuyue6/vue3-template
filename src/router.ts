@@ -20,6 +20,10 @@ const routes: RouteRecordRaw[] = [
   },
   { path: "/about", component: About },
   {
+    path: "",
+    redirect: "/home",
+  },
+  {
     path: "/:path",
     redirect: "/home",
   },
