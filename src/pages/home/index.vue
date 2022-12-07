@@ -1,8 +1,10 @@
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <el-header v-if="util.getUrlQuery('hiddenModules') !== 'header'">
+      <DAHeader />
+    </el-header>
     <el-container>
-      <Navigator />
+      <DANavigator />
       <el-main>
         <router-view />
       </el-main>
@@ -11,5 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import Navigator from "./navigator.vue";
+  import DAHeader from "./header.vue";
+  import DANavigator from "./navigator.vue";
+  import { util } from '@/shared'
 </script>

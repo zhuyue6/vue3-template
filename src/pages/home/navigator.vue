@@ -1,5 +1,5 @@
 <template>
-  <el-aside>
+  <el-aside class="asideContainer">
     <el-menu :default-active="route.path" :router="true">
       <template v-for="item of menus">
         <template v-if="item.children && item.children.length > 0">
@@ -36,16 +36,17 @@
 </template>
 
 <script setup lang="ts">
-import { Location, Setting } from "@element-plus/icons-vue";
-import vue from "vue";
+import { DataLine } from "@element-plus/icons-vue";
 import { ElMenuItem, ElSubMenu } from "element-plus";
+import { type Component } from 'vue'
 import { useRoute } from "vue-router";
 
 interface Menu {
   title: string;
   path?: string;
   key?: string;
-  icon?: vue.Component;
+  icon?: Component;
+  active?: boolean
   children?: Menu[];
 }
 
@@ -53,21 +54,15 @@ const route = useRoute();
 
 const menus: Menu[] = [
   {
-    title: "Navigator 1",
+    title: "页面分析",
     path: "/home",
-    icon: Location,
-  },
-  {
-    title: "Navigator 2",
-    key: "Navigator 2",
-    icon: Setting,
-    children: [
-      {
-        title: "Navigator 2 children",
-        path: "/home/about",
-        icon: Setting,
-      },
-    ],
-  },
+    icon: DataLine,
+  }
 ];
 </script>
+
+<style>
+  .asideContainer {
+    padding-top: 2px;
+  }
+</style>

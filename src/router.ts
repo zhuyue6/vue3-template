@@ -3,22 +3,25 @@ import {
   createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
+import type {Component} from 'vue'
 
-const Home = import("./pages/home/index.vue");
-const About = import("./pages/home/about.vue");
+interface RouteMenu {
+  icon?: Component;
+  isNavigator?: boolean
+  children?: (RouteRecordRaw & RouteMenu)[]
+}
 
-const routes: RouteRecordRaw[] = [
+const routes: (RouteRecordRaw & RouteMenu)[] = [
   {
     path: "/home",
-    component: Home,
+    component: import("./pages/home/index.vue"),
     children: [
       {
-        path: "about",
-        component: About,
+        path: "",
+        component: import("./pages/pageAnalysis/index.vue"),
       },
     ],
   },
-  { path: "/about", component: About },
   {
     path: "",
     redirect: "/home",
@@ -34,10 +37,6 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(async () => {
-  const isLogin = true;
-  // isLogin = await canUserAccess(to)
-  if (!isLogin) return "/login";
-});
+export { routes }
 
 export default router;
