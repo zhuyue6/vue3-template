@@ -13,8 +13,9 @@ h6 {
   margin: 0;
 }
 
+$rootFontSize: 12px;
 div {
-  font-size: @rootFontSize;
+  font-size: $rootFontSize;
 }
 
 html,
@@ -23,5 +24,3 @@ body,
   width: 100%;
   height: 100%;
 }
-
-@rootFontSize: 12px;

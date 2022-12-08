@@ -3,12 +3,12 @@ import {
   createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
-import type {Component} from 'vue'
+import type { Component } from "vue";
 
 interface RouteMenu {
   icon?: Component;
-  isNavigator?: boolean
-  children?: (RouteRecordRaw & RouteMenu)[]
+  isNavigator?: boolean;
+  children?: (RouteRecordRaw & RouteMenu)[];
 }
 
 const routes: (RouteRecordRaw & RouteMenu)[] = [
@@ -37,6 +37,6 @@ const router = createRouter({
   routes,
 });
 
-export { routes }
+export { routes };
 
 export default router;

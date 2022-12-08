@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-  import DAHeader from "./header.vue";
-  import DANavigator from "./navigator.vue";
-  import { util } from '@/shared'
+import DAHeader from "./header.vue";
+import DANavigator from "./navigator.vue";
+import { util } from "@/shared";
 </script>

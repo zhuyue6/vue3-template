@@ -38,7 +38,7 @@
 <script setup lang="ts">
 import { DataLine } from "@element-plus/icons-vue";
 import { ElMenuItem, ElSubMenu } from "element-plus";
-import { type Component } from 'vue'
+import { type Component } from "vue";
 import { useRoute } from "vue-router";
 
 interface Menu {
@@ -46,7 +46,7 @@ interface Menu {
   path?: string;
   key?: string;
   icon?: Component;
-  active?: boolean
+  active?: boolean;
   children?: Menu[];
 }
 
@@ -57,12 +57,12 @@ const menus: Menu[] = [
     title: "页面分析",
     path: "/home",
     icon: DataLine,
-  }
+  },
 ];
 </script>
 
-<style>
-  .asideContainer {
-    padding-top: 2px;
-  }
+<style scoped>
+.asideContainer {
+  padding-top: 2px;
+}
 </style>
