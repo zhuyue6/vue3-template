@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { DataLine } from "@element-plus/icons-vue";
+import { DataLine, Collection } from "@element-plus/icons-vue";
 import { ElMenuItem, ElSubMenu } from "element-plus";
 import { type Component } from "vue";
 import { useRoute } from "vue-router";
@@ -57,6 +57,11 @@ const menus: Menu[] = [
     title: "页面分析",
     path: "/home",
     icon: DataLine,
+  },
+  {
+    title: "用户留存分析",
+    path: "/home/retentionAnalysis",
+    icon: Collection,
   },
 ];
 </script>

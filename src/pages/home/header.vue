@@ -4,13 +4,20 @@
       <h1>Data Analysis</h1>
     </div>
     <div>
-      <el-switch v-model="themeDark" @change="changeTheme" />
+      <el-switch
+        v-model="themeDark"
+        @change="changeTheme"
+        inline-prompt
+        :active-icon="Sunny"
+        :inactive-icon="MoonNight"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, onMounted, computed } from "vue";
+import { Sunny, MoonNight } from "@element-plus/icons-vue";
 import { util } from "@/shared";
 import { setTheme } from "@/themes";
 
@@ -25,6 +32,7 @@ interface State {
     list: ThemeItem[];
   };
 }
+
 const state: State = reactive({
   theme: {
     value: "",
@@ -59,19 +67,16 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+@use "@/styles/common";
 .container {
   width: 100%;
   height: 100%;
   border-bottom: 1px solid #dcdfe6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include common.flex(space-between);
   .logo {
     height: 100%;
     width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include common.flex;
   }
 }
 </style>

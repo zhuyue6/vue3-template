@@ -1,8 +1,7 @@
 {
-  "name": "vue-demo",
+  "name": "vue-template",
   "version": "1.0.0",
-  "description": "vue demo",
-  "main": "index.js",
+  "description": "vue3+vite+ts+element plus项目模板，并支持换肤；Template project, vue3+vite+ts+element plus, and support skin changing",
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
       "eslint --fix",
@@ -44,7 +43,7 @@
     "type": "git",
     "url": "git+https://github.com/zhuyue6/vue-demo.git"
   },
-  "author": "",
+  "author": "zhuyue",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zhuyue6/vue-demo/issues"

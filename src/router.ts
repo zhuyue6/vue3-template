@@ -20,6 +20,10 @@ const routes: (RouteRecordRaw & RouteMenu)[] = [
         path: "",
         component: import("./pages/pageAnalysis/index.vue"),
       },
+      {
+        path: "retentionAnalysis",
+        component: import("./pages/retentionAnalysis/index.vue"),
+      },
     ],
   },
   {
