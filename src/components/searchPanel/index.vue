@@ -1,7 +1,7 @@
 <template>
-  <div class="filterConditionContainer">
-    <div class="filterCondition" v-show="state.filterVisibile">
-      <div class="filterConditionContent">
+  <div class="searchConditionContainer">
+    <div class="searchCondition" v-show="state.searchVisibile">
+      <div class="searchConditionContent">
         <el-select v-model="state.terminal.select" placeholder="选择终端">
           <el-option
             v-for="item in state.terminal.list"
@@ -22,14 +22,14 @@
       </div>
       <el-button type="primary" size="small" @click="search">搜索</el-button>
     </div>
-    <div v-show="!state.filterVisibile" />
-    <div class="filterControl">
-      <div class="filterVisibile" @click="filterVisibileSwitch">
+    <div v-show="!state.searchVisibile" />
+    <div class="searchControl">
+      <div class="searchVisibile" @click="searchVisibileSwitch">
         <el-icon :size="20">
-          <Fold v-show="state.filterVisibile" />
-          <Expand v-show="!state.filterVisibile" />
+          <Fold v-show="state.searchVisibile" />
+          <Expand v-show="!state.searchVisibile" />
         </el-icon>
-        <span>{{ state.filterVisibile ? "折叠" : "展开" }}</span>
+        <span>{{ state.searchVisibile ? "折叠" : "展开" }}</span>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@ import { reactive } from "vue";
 import { Fold, Expand } from "@element-plus/icons-vue";
 
 interface State {
-  filterVisibile: boolean;
+  searchVisibile: boolean;
   terminal: {
     select: string;
     list: {
@@ -51,7 +51,7 @@ interface State {
 }
 
 const state: State = reactive({
-  filterVisibile: true,
+  searchVisibile: true,
   terminal: {
     select: "",
     list: [
@@ -72,8 +72,8 @@ const state: State = reactive({
   dataRange: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
 });
 
-function filterVisibileSwitch() {
-  state.filterVisibile = !state.filterVisibile;
+function searchVisibileSwitch() {
+  state.searchVisibile = !state.searchVisibile;
 }
 
 function search() {
@@ -83,11 +83,11 @@ function search() {
 
 <style scoped lang="scss">
 @use "@/styles/common";
-.filterConditionContainer {
+.searchConditionContainer {
   display: flex;
   @include common.flex(space-between);
   margin-bottom: 20px;
-  .filterCondition {
+  .searchCondition {
     @include common.flex(space-between);
     flex-grow: 1;
     margin-right: 20px;
@@ -95,14 +95,14 @@ function search() {
       margin-left: 20px;
       min-width: 400px;
     }
-    .filterConditionContent {
+    .searchConditionContent {
       @include common.flex;
     }
   }
-  .filterControl {
+  .searchControl {
     @include common.flex;
     height: 32px;
-    .filterVisibile {
+    .searchVisibile {
       cursor: pointer;
       @include common.flex;
     }

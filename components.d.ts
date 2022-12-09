@@ -23,8 +23,10 @@ declare module "@vue/runtime-core" {
     ElSwitch: typeof import("element-plus/es")["ElSwitch"];
     ElTable: typeof import("element-plus/es")["ElTable"];
     ElTableColumn: typeof import("element-plus/es")["ElTableColumn"];
+    FilterPanel: typeof import("./src/components/filterPanel/index.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
+    SearchPanel: typeof import("./src/components/searchPanel/index.vue")["default"];
     Undefined: typeof import("./src/components/index.vue")["default"];
   }
 }
